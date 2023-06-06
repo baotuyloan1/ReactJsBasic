@@ -1,5 +1,7 @@
 import {useState} from "react";
 import Content from "./Content";
+import PreviewAvatar from "./PreviewAvatar";
+import AppChat from "./AppChat";
 
 function App() {
     console.log('cha re-render');
@@ -100,6 +102,8 @@ function App() {
 
     const [show, setShow] = useState(false);
     return (<div className="App" style={{padding: 32}}>
+        <AppChat/>
+        <PreviewAvatar/>
         <button onClick={()=> setShow(!show)}>Toggle</button>
         {show && <Content/> || <br/>}
         <input value={job} onChange={(e) => setJob(e.target.value)}/>
